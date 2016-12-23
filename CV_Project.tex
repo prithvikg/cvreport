@@ -1,0 +1,198 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+% \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading nips_2016
+%
+% to avoid loading the natbib package, add option nonatbib:
+% \usepackage[nonatbib]{nips_2016}
+
+\usepackage[final]{nips_style}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{subfig}
+
+\DeclareMathOperator*{\argmax}{\arg\max}
+\DeclareMathOperator*{\argmin}{\arg\min}
+
+\newcommand{\diag}[0]{\operatorname{diag}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vects}[1]{\boldsymbol{#1}}
+\newcommand{\matr}[1]{\mathbf{#1}}
+\newcommand{\matrs}[1]{\boldsymbol{#1}}
+
+\newcommand{\va}[0]{\vect{a}}
+\newcommand{\vb}[0]{\vect{b}}
+\newcommand{\vc}[0]{\vect{c}}
+\newcommand{\vd}[0]{\vect{d}}
+\newcommand{\ve}[0]{\vect{e}}
+\newcommand{\vf}[0]{\vect{f}}
+\newcommand{\vg}[0]{\vect{g}}
+\newcommand{\vh}[0]{\vect{h}}
+\newcommand{\vi}[0]{\vect{i}}
+\newcommand{\vj}[0]{\vect{j}}
+\newcommand{\vk}[0]{\vect{k}}
+\newcommand{\vl}[0]{\vect{l}}
+\newcommand{\vm}[0]{\vect{m}}
+\newcommand{\vn}[0]{\vect{n}}
+\newcommand{\vo}[0]{\vect{o}}
+\newcommand{\vp}[0]{\vect{p}}
+\newcommand{\vq}[0]{\vect{q}}
+\newcommand{\vr}[0]{\vect{r}}
+\newcommand{\vs}[0]{\vect{s}}
+\newcommand{\vt}[0]{\vect{t}}
+\newcommand{\vu}[0]{\vect{u}}
+\newcommand{\vv}[0]{\vect{v}}
+\newcommand{\vw}[0]{\vect{w}}
+\newcommand{\vx}[0]{\vect{x}}
+\newcommand{\vy}[0]{\vect{y}}
+\newcommand{\vz}[0]{\vect{z}}
+\newcommand{\valpha}[0]{\vects{\alpha}}
+\newcommand{\vtheta}[0]{\vects{\theta}}
+\newcommand{\veta}[0]{\vects{\eta}}
+\newcommand{\vmu}[0]{\vects{\mu}}
+
+\newcommand{\mA}[0]{\matr{A}}
+\newcommand{\mB}[0]{\matr{B}}
+\newcommand{\mC}[0]{\matr{C}}
+\newcommand{\mD}[0]{\matr{D}}
+\newcommand{\mE}[0]{\matr{E}}
+\newcommand{\mF}[0]{\matr{F}}
+\newcommand{\mG}[0]{\matr{G}}
+\newcommand{\mH}[0]{\matr{H}}
+\newcommand{\mI}[0]{\matr{I}}
+\newcommand{\mJ}[0]{\matr{J}}
+\newcommand{\mK}[0]{\matr{K}}
+\newcommand{\mL}[0]{\matr{L}}
+\newcommand{\mM}[0]{\matr{M}}
+\newcommand{\mN}[0]{\matr{N}}
+\newcommand{\mO}[0]{\matr{O}}
+\newcommand{\mP}[0]{\matr{P}}
+\newcommand{\mQ}[0]{\matr{Q}}
+\newcommand{\mR}[0]{\matr{R}}
+\newcommand{\mS}[0]{\matr{S}}
+\newcommand{\mT}[0]{\matr{T}}
+\newcommand{\mU}[0]{\matr{U}}
+\newcommand{\mV}[0]{\matr{V}}
+\newcommand{\mW}[0]{\matr{W}}
+\newcommand{\mX}[0]{\matr{X}}
+\newcommand{\mY}[0]{\matr{Y}}
+\newcommand{\mZ}[0]{\matr{Z}}
+\newcommand{\mSigma}[0]{\matrs{\Sigma}}
+
+\DeclareMathOperator*{\E}{E}
+\DeclareMathOperator*{\tr}{tr}
+\DeclareMathOperator*{\prox}{prox}
+\DeclareMathOperator*{\conv}{conv}
+\DeclareMathOperator*{\minimize}{minimize}
+\DeclareMathOperator*{\maximize}{maximize}
+\DeclareMathOperator*{\sign}{sign}
+\DeclareMathOperator*{\vecop}{vec}
+\DeclareMathOperator*{\Poisson}{Poisson}
+\DeclareMathOperator*{\Cat}{Cat}
+\DeclareMathOperator*{\Dir}{Dir}
+\DeclareMathOperator*{\Exp}{Exp}
+\DeclareMathOperator*{\DiscreteUniform}{DiscreteUniform}
+\newcommand{\R}{\mathbb{R}}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\inprod}{\langle}{\rangle}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\allowdisplaybreaks
+
+\renewcommand{\thesubsection}{\thesection \,\,(\alph{subsection})}
+\renewcommand{\thesubsubsection}{\thesection \,\,(\alph{subsection})\,\,[\roman{subsubsection}]
+                                 \quad Solution}
+
+\bibliographystyle{abbrvnat}
+
+\title{Computer Vision: Project Report}
+
+\author{
+  Prithvi Krishna Gattamaneni\\
+  \textbf{Adithya Parthasarathy}\\
+  \textbf{Vishal Motwani}\\
+  \texttt{pkg238@nyu.edu} \\
+  \texttt{ap4608@nyu.edu} \\
+  \texttt{vpm238@nyu.edu} \\
+}
+%xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx%
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction} %%1
+
+We attempted to work on the Galaxy zoo classification problem which was a Kaggle problem a few years back. The dataset was downloaded from Kaggle. The problem at a high level is a galaxy classification but the nature of the dataset makes it a regression problem. The dataset was created by having users answer a series of questions on a given image. The sequence of questions that a user answers for a given image is not fixed, and every question depends on the previous questions' answer, the first question being fixed. There are a total of 11 questions and each question has 3 to 7 responses depending on the question. For each image, we have the Conditional probability distributions for each class of questions. Thus we simply have a vector of 37 numbers for each image that we have to predict. The accuracy of the solution is measured by the root mean square error, and so this is the same metric that our model is optimised on. 
+
+\section{Data Augmentation} %%2
+
+Images of galaxies are rotation invariant: there is no up or down in space. They are also scale invariant and translation invariant to a limited extent. All of these invariances could be exploited to do data augmentation: creating new training data by perturbing the existing data points.\\
+
+Each training example was perturbed before presenting it to the network by randomly scaling it, rotating it, translating it and optionally flipping it. We used the following parameter ranges:
+We implemented a series of data augmentation steps as mentioned\\ \href{http://benanne.github.io/2014/04/05/galaxy-zoo.html}{here}.\\
+
+\textbf{Cropping, Zooming and downsampling}
+The data consisted of 424x424 colour JPEG images, along with 37 weighted probabilities that have to be predicted for each image.\\
+For almost all of the images, the interesting part was in the center. The void of space around the galaxies was not very discriminative, so we randomly cropped all images to equal height and width between 207/1.3 and 1.3*207 (log-uniform), then downsampled them 3x to 69x69, to keep the input size of the network manageable.
+
+\textbf{Rotation}
+Images were rotated at random with angle between 0 and 360 degrees(uniform)
+
+\textbf{Flip}
+Images were flipped with a probability of 0.5
+
+\textbf{Translation}
+Images were translated randomly in the x and y direction, by an amount between -4 to 4 pixels at random (relative to original image)
+
+
+
+\section{Models Attempted} %%3
+\subsection{Soumith model} %%3a
+This section is to have a brief description of the model. If possible a picture of the layers would be nice.
+\\Talk about data Normalisation. This is something that was being done in his code originally and we didn't change it i guess. He is normalising the data before the network trains it and is then unnormalising it after getting output from the test network i guess.
+\subsection{Blog model} %%3b
+This section is to have a brief description of the model. If possible a picture of the layers would be nice.
+
+\section{Results}
+This section is to have results that we got. Plots of convergence should be included.
+
+
+
+\end{document}
